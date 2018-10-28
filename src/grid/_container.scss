@@ -1,0 +1,29 @@
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container-fluid-1440 {
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @include media($sm) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  @include media($xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.container-fluid-1920 {
+  max-width: 1920px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}

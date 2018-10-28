@@ -1,0 +1,98 @@
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    padding-right: ($gutter / 2);
+    padding-left: ($gutter / 2);
+  }
+
+  @each $breakpoint, $min in $breakpoints {
+    @for $i from 1 through $columns {
+      .col-#{$breakpoint}-#{$i} {
+        @extend %grid-column;
+        @media (min-width: $min) {
+          grid-column: span #{$i};
+
+          @supports not (display: grid) {
+            width: (100% / $grid-columns * $i);
+          }
+        }
+      }
+
+      .col-#{$breakpoint}-order-#{$i} {
+        @media (min-width: $min) {
+          order: #{$i}
+        }
+      }
+    }
+  }
+}
+@mixin make-grid-fillers($breakpoints: $grid-breakpoints) {
+  .grid-filler-1240,
+  .grid-filler-1140,
+  .grid-filler-1440 {
+    display: grid;
+    justify-items: stretch;
+
+    @supports not (display: grid) {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    > .grid-row {
+      margin: 0;
+      width: 100%;
+      @media (max-width: map-get($grid-breakpoints, sm) - 1) {
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .grid-filler-1440 {
+    grid-template-columns: auto minmax(0, 1460px) auto;
+    @supports not (display: grid) {
+      max-width: 1460px;
+      margin: auto;
+    }
+  }
+
+  .grid-filler-1140 {
+    grid-template-columns: auto minmax(0, 1040px) auto;
+    @supports not (display: grid) {
+      max-width: 1040px;
+      margin: auto;
+    }
+  }
+
+  .grid-filler-1240 {
+    grid-template-columns: auto minmax(0, 1140px) auto;
+    @supports not (display: grid) {
+      max-width: 1140px;
+      margin: auto;
+    }
+  }
+
+
+
+  .grid-col-filler {
+    width: auto;
+    min-width: 50px;
+
+    @media (max-width: 992px) {
+      min-width: 15px;
+    }
+
+    @media (max-width: 768px) {
+      min-width: 0;
+    }
+  }
+}
+@mixin make-margins() {
+  @for $i from 1 through 10 {
+    .mb-#{$i} {
+      margin-bottom: #{$i*10}px
+    }
+    .mt-#{$i} {
+      margin-top: #{$i*10}px
+    }
+  }
+}

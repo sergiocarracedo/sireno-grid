@@ -1,0 +1,32 @@
+@mixin make-hidden($breakpoints: $grid-breakpoints) {
+  $breakpoint-values: map-values($breakpoints);
+  @each $breakpoint, $bp-min in $breakpoints {
+    .hidden-#{$breakpoint} {
+      $i: index(map-keys($breakpoints), $breakpoint);
+
+      $min: nth($breakpoint-values, $i);
+
+      $max: 0;
+      @if ($i + 1) <= length($breakpoint-values) {
+        $max: nth($breakpoint-values, $i + 1);
+      }
+
+      @if $min == 0 {
+        @media (max-width: $max) {
+          top: $i;
+          display: none !important;
+        }
+      } @else {
+        @if $max == 0 {
+          @media (min-width: $min) {
+            display: none !important;
+          }
+        } @else {
+          @media (min-width: $min) and (max-width: $max) {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}

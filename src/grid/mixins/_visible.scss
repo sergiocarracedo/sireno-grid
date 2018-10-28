@@ -1,0 +1,24 @@
+@mixin make-visible($breakpoints: $grid-breakpoints) {
+  $prev_min: 9999999;
+  @each $breakpoint, $min in reverse($breakpoints) {
+    .visible-#{$breakpoint} {
+      display: none;
+
+      @if $prev_min == 9999999 {
+        @media (min-width: $min) {
+          display: block !important;
+        }
+      } @else if ($min == 0) {
+        @media (max-width: $prev_min) {
+          display: block !important;
+        }
+      } @else {
+        @media (min-width: $min) and (max-width: $prev_min) {
+          display: block !important;
+        }
+      }
+
+      $prev_min: $min;
+    }
+  }
+}

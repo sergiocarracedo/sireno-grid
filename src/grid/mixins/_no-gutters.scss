@@ -1,0 +1,102 @@
+@mixin make-no-gutters($breakpoints: $grid-breakpoints) {
+  .no-gutter-left {
+    padding-left: 0;
+  }
+
+  .no-gutter-right {
+    padding-right: 0;
+  }
+
+  .no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+  $breakpoint-values: map-values($breakpoints);
+  @each $breakpoint, $bp-min in $breakpoints {
+
+    .no-#{$breakpoint}-gutters  {
+      $i: index(map-keys($breakpoints), $breakpoint);
+      $min: nth($breakpoint-values, $i);
+      $max: 0;
+
+      @if ($i + 1) <= length($breakpoint-values) {
+        $max: nth($breakpoint-values, $i + 1);
+      }
+
+      @if $min == 0 {
+        @media (max-width: $max) {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      } @else {
+        @if $max == 0 {
+          @media (min-width: $min) {
+            padding-right: 0;
+            padding-left: 0;
+          }
+        } @else {
+          @media (min-width: $min) and (max-width: $max) {
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+
+    .no-#{$breakpoint}-gutter-left  {
+      $i: index(map-keys($breakpoints), $breakpoint);
+      $min: nth($breakpoint-values, $i);
+      $max: 0;
+
+      @if ($i + 1) <= length($breakpoint-values) {
+        $max: nth($breakpoint-values, $i + 1);
+      }
+
+      @if $min == 0 {
+        @media (max-width: $max) {
+          padding-left: 0;
+        }
+      } @else {
+        @if $max == 0 {
+          @media (min-width: $min) {
+            padding-left: 0;
+          }
+        } @else {
+          @media (min-width: $min) and (max-width: $max) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+
+    .no-#{$breakpoint}-gutter-right  {
+      $i: index(map-keys($breakpoints), $breakpoint);
+      $min: nth($breakpoint-values, $i);
+      $max: 0;
+
+      @if ($i + 1) <= length($breakpoint-values) {
+        $max: nth($breakpoint-values, $i + 1);
+      }
+
+      @if $min == 0 {
+        @media (max-width: $max) {
+          padding-right: 0;
+        }
+      } @else {
+        @if $max == 0 {
+          @media (min-width: $min) {
+            padding-right: 0;
+          }
+        } @else {
+          @media (min-width: $min) and (max-width: $max) {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
