@@ -9,7 +9,7 @@ Este grid se basa en la típica estructura de 12 columnas al más puro estilo bo
 El grid hace fallback a Flexbox si el navegador no soporta CSS Grid Layout manteniendo un aspecto muy similar
 
 
-####### Ejemplo estructura columnas
+###### Ejemplo estructura columnas
 Todas las clases usadas son proporcionadas por el framework
 ```
 <div class="container-fluid">
@@ -24,7 +24,7 @@ Todas las clases usadas son proporcionadas por el framework
 </div>
 ```
 
-##Algunas funcionalidades destacadas de **Sireno Grid**
+## Algunas funcionalidades destacadas de **Sireno Grid**
 
 #### Containers
 ```
