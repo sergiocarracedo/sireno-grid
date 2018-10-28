@@ -1,0 +1,16 @@
+@mixin media($devices) {
+  @each $device in $devices {
+    @media screen and (max-width: $device) {
+      @content;
+    }
+  }
+
+}
+
+@mixin media-min($devices) {
+  @each $device in $devices {
+    @media screen and (min-width: $device - 1px) {
+      @content;
+    }
+  }
+}

@@ -9,13 +9,13 @@
   padding-left: 50px;
   padding-right: 50px;
 
-  @include media($sm) {
+  @include media(map-get($grid-breakpoints, sm)) {
     padding-left: 20px;
     padding-right: 20px;
   }
 
 
-  @include media($xs) {
+  @include media(map-get($grid-breakpoints, xs)) {
     padding-left: 20px;
     padding-right: 20px;
   }
