@@ -10,6 +10,13 @@ Este grid se basa en la típica estructura de 12 columnas al más puro estilo bo
 El grid hace fallback a Flexbox si el navegador no soporta CSS Grid Layout manteniendo un aspecto muy similar
 
 
+# Install
+
+```yarn add sireno-grid```
+o
+```npm i sireno-grid --save```
+
+
 ###### Ejemplo estructura columnas
 Todas las clases usadas son proporcionadas por el framework
 ```
