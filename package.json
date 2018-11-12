@@ -1,7 +1,7 @@
 {
   "name": "sireno-grid",
-  "version": "0.0.1",
-  "description": "A simple CSSGRid grid width felxbox fallback",
+  "version": "0.2.0",
+  "description": "A lightweight CSS Grid system based on CSS Grid Layout with flex fallback for unsupported browsers.",
   "email": "info@sergiocarracedo.es",
   "url": "http://www.opsou.com/",
   "license": "MIT",
@@ -18,9 +18,7 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.23.1"
-  },
-  "dependencies": {
+    "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
   }
 }
