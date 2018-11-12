@@ -1,6 +1,6 @@
 {
   "name": "sireno-grid",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A lightweight CSS Grid system based on CSS Grid Layout with flex fallback for unsupported browsers.",
   "email": "info@sergiocarracedo.es",
   "url": "http://www.opsou.com/",
