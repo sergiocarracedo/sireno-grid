@@ -1,15 +1,15 @@
 @mixin make-no-gutters($breakpoints: $grid-breakpoints, $gutter: $grid-gutter-width) {
   .no-gutter-left {
-    margin-left: 0;
+    padding-left: 0;
   }
 
   .no-gutter-right {
-    margin-right: 0;
+    padding-right: 0;
   }
 
   .no-gutters {
-    margin-right: 0;
-    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
 
@@ -18,41 +18,41 @@
 
     .no-gutters-#{$breakpoint}  {
       @media (min-width: $bp-min) {
-        margin-right: 0;
-        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
       }
     }
 
     .gutters-#{$breakpoint}  {
       @media (min-width: $bp-min) {
-        margin-right: ($gutter / 2);
-        margin-left: ($gutter / 2);
+        padding-right: ($gutter / 2);
+        padding-left: ($gutter / 2);
       }
     }
 
 
     .no-gutter-left-#{$breakpoint} {
       @media (min-width: $bp-min) {
-          margin-left: 0;
+        padding-left: 0;
       }
     }
 
     .gutter-left-#{$breakpoint} {
       @media (min-width: $bp-min) {
-        margin-left: ($gutter / 2);
+        padding-left: ($gutter / 2);
       }
     }
 
 
     .no-gutter-right-#{$breakpoint} {
       @media (min-width: $bp-min) {
-        margin-right: 0;
+        padding-right: 0;
       }
     }
 
     .gutter-right-#{$breakpoint} {
       @media (min-width: $bp-min) {
-        margin-right: ($gutter / 2);
+        padding-right: ($gutter / 2);
       }
     }
   }

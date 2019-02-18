@@ -1,16 +1,17 @@
 @mixin make-grid-rows($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   .grid-row {
-    display: grid;
-    grid-template-columns: repeat($columns, 1fr);
     margin-left: -($grid-gutter-width / 2);
     margin-right: -($grid-gutter-width  / 2);
 
-    @supports not (display: grid) {
-      display: flex;
-      flex-flow: row wrap;
-      &, * {
-        box-sizing: border-box;
-      }
+    display: flex;
+    flex-flow: row wrap;
+    &, * {
+      box-sizing: border-box;
+    }
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat($columns, 1fr);
     }
 
     @each $breakpoint, $min in $breakpoints {

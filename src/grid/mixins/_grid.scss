@@ -1,8 +1,8 @@
 @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   // Common properties for all breakpoints
   %grid-column {
-    margin-right: ($gutter / 2);
-    margin-left: ($gutter / 2);
+    padding-right: ($gutter / 2);
+    padding-left: ($gutter / 2);
   }
 
   @each $breakpoint, $min in $breakpoints {
@@ -10,10 +10,11 @@
       .col-#{$breakpoint}-#{$i} {
         @extend %grid-column;
         @media (min-width: $min) {
-          grid-column: span #{$i};
+          width: (100% / $grid-columns * $i);
 
-          @supports not (display: grid) {
-            width: (100% / $grid-columns * $i);
+          @supports (display: grid) {
+            width: auto;
+            grid-column: span #{$i};
           }
         }
       }
@@ -38,62 +39,50 @@
 }
 @mixin make-grid-fillers($breakpoints: $grid-breakpoints) {
   .grid-filler {
-    display: grid;
-    justify-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
 
-    @supports not (display: grid) {
-      display: flex;
-      flex-flow: row wrap;
+    @supports (display: grid) {
+      display: grid;
+      justify-items: stretch;
     }
 
-    .grid-filler-container > .grid-row {
-      margin: 0;
+    .grid-filler-container {
       width: 100%;
-      @media (max-width: map-get($grid-breakpoints, sm) - 1) {
-        padding: 0 5px;
+      margin: auto;
+
+      > .grid-row {
+        width: 100%;
+        margin: 0;
+        @media (max-width: map-get($grid-breakpoints, sm) - 1) {
+          padding: 0 5px;
+        }
       }
     }
   }
 
-  .grid-filler-1440 {
-    grid-template-columns: auto minmax(0, 1440px) auto;
-    @supports not (display: grid) {
-      max-width: 1440px;
-      margin: auto;
-    }
-  }
-
-  .grid-filler-1140 {
-    grid-template-columns: auto minmax(0, 1140px) auto;
-    @supports not (display: grid) {
-      max-width: 1140px;
-      margin: auto;
-    }
-  }
-
-  .grid-filler-1240 {
-    grid-template-columns: auto minmax(0, 1240px) auto;
-    @supports not (display: grid) {
-      max-width: 1240px;
-      margin: auto;
-    }
-  }
-
-
-
   .grid-col-filler {
+    flex: 1;
     width: auto;
-    min-width: 50px;
+    min-width: 0;
+  }
 
-    @media (max-width: 992px) {
-      min-width: 15px;
+  @include make-grid-filler-size(1440);
+  @include make-grid-filler-size(1240);
+  @include make-grid-filler-size(1140);
+}
+
+@mixin make-grid-filler-size($width) {
+  .grid-filler-#{$width} {
+    @supports (display: grid) {
+      grid-template-columns: auto minmax(0, #{$width}px) auto;
     }
-
-    @media (max-width: 768px) {
-      min-width: 0;
+    .grid-filler-container {
+      max-width: #{$width}px;
     }
   }
 }
+
 @mixin make-margins() {
   @for $i from 1 through 10 {
     .mb-#{$i} {
