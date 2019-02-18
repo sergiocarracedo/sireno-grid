@@ -5,6 +5,13 @@ Foto: https://commons.wikimedia.org/wiki/File:O_sereo,_Francisco_Leiro.jpg
 
 A grid system based on the grid display property with flex fallback for unsupported browsers.[CSS Grid Layout](https://blogs.igalia.com/mrego/2017/05/19/spanish-css-grid-layout-el-futuro-ya-esta-aqui/)
 
+
+Proudly sponsored by [![Opsou](https://sirenogrid.com/opsou.png)](https://opsou.com)
+
+Logo design by [![Pedro Figueras](https://sirenogrid.com/pedrofigueras.png)](https://pedrofigueras.com)
+
+Browser test thanks to [![BrowserStack](https://sirenogrid.com/browserstack-logo-600x315.png)](https://browserstack.com)
+
 # Install
 
 ```yarn add sireno-grid```
