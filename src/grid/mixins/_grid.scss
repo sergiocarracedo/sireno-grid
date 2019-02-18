@@ -37,9 +37,7 @@
   }
 }
 @mixin make-grid-fillers($breakpoints: $grid-breakpoints) {
-  .grid-filler-1240,
-  .grid-filler-1140,
-  .grid-filler-1440 {
+  .grid-filler {
     display: grid;
     justify-items: stretch;
 
@@ -48,7 +46,7 @@
       flex-flow: row wrap;
     }
 
-    > .grid-row {
+    .grid-filler-container > .grid-row {
       margin: 0;
       width: 100%;
       @media (max-width: map-get($grid-breakpoints, sm) - 1) {
@@ -58,25 +56,25 @@
   }
 
   .grid-filler-1440 {
-    grid-template-columns: auto minmax(0, 1460px) auto;
+    grid-template-columns: auto minmax(0, 1440px) auto;
     @supports not (display: grid) {
-      max-width: 1460px;
+      max-width: 1440px;
       margin: auto;
     }
   }
 
   .grid-filler-1140 {
-    grid-template-columns: auto minmax(0, 1040px) auto;
+    grid-template-columns: auto minmax(0, 1140px) auto;
     @supports not (display: grid) {
-      max-width: 1040px;
+      max-width: 1140px;
       margin: auto;
     }
   }
 
   .grid-filler-1240 {
-    grid-template-columns: auto minmax(0, 1140px) auto;
+    grid-template-columns: auto minmax(0, 1240px) auto;
     @supports not (display: grid) {
-      max-width: 1140px;
+      max-width: 1240px;
       margin: auto;
     }
   }
