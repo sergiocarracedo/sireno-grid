@@ -1,6 +1,6 @@
 {
   "name": "sireno-grid",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A lightweight CSS Grid system based on CSS Grid Layout with flexbox fallback for unsupported browsers.",
   "email": "info@sergiocarracedo.es",
   "author": {
