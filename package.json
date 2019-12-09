@@ -28,5 +28,11 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@sergiocarracedo"
+  },
+  "dependencies": {
+    "serialize-javascript": "^2.1.1"
   }
 }
