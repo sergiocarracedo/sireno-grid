@@ -33,6 +33,6 @@
     "registry": "https://npm.pkg.github.com/@sergiocarracedo"
   },
   "dependencies": {
-    "serialize-javascript": "^2.1.1"
+    "serialize-javascript": "^3.1.0"
   }
 }
