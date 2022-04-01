@@ -1,15 +1,21 @@
 {
   "name": "sireno-grid",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A lightweight CSS Grid system based on CSS Grid Layout with flexbox fallback for unsupported browsers.",
-  "email": "info@sergiocarracedo.es",
+  "email": "hi@sergiocarracedo.es",
   "author": {
     "name": "Sergio Carracedo",
-    "email": "info@sergiocarracedo.es",
+    "email": "hi@sergiocarracedo.es",
     "url": "https://sergiocarracedo.es"
   },
   "url": "http://www.opsou.com/",
-  "keywords": "grid css flexbox gridlayout sireno vigo",
+  "keywords": [
+    "gridcss",
+    "flexbox",
+    "gridlayout",
+    "sireno",
+    "vigo"
+  ],
   "homepage": "http://sirenogrid.com",
   "repository": "https://github.com/sergiocarracedo/sireno-grid",
   "license": "MIT",
@@ -22,15 +28,14 @@
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "mini-css-extract-plugin": "^0.4.4",
-    "node-sass": "^4.9.4",
     "postcss-loader": "^3.0.0",
+    "sass": "^1.49.10",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@sergiocarracedo"
   },
   "dependencies": {
     "serialize-javascript": "^3.1.0"

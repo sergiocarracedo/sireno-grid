@@ -25,8 +25,8 @@
 
     .gutters-#{$breakpoint}  {
       @media (min-width: $bp-min) {
-        padding-right: ($gutter / 2);
-        padding-left: ($gutter / 2);
+        padding-right: calc($gutter / 2);
+        padding-left: calc($gutter / 2);
       }
     }
 
@@ -39,7 +39,7 @@
 
     .gutter-left-#{$breakpoint} {
       @media (min-width: $bp-min) {
-        padding-left: ($gutter / 2);
+        padding-left: calc($gutter / 2);
       }
     }
 
@@ -52,7 +52,7 @@
 
     .gutter-right-#{$breakpoint} {
       @media (min-width: $bp-min) {
-        padding-right: ($gutter / 2);
+        padding-right: calc($gutter / 2);
       }
     }
   }

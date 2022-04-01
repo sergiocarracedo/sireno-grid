@@ -1,7 +1,7 @@
 @mixin make-grid-rows($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
   .grid-row {
-    margin-left: -($grid-gutter-width / 2);
-    margin-right: -($grid-gutter-width  / 2);
+    margin-left: -(calc($grid-gutter-width / 2));
+    margin-right: -(calc($grid-gutter-width  / 2));
 
     display: flex;
     flex-flow: row wrap;
@@ -24,3 +24,22 @@
     }
   }
 }
+
+
+
+@mixin make-col-gap() {
+  .grid-row {
+    @each $gap in [15, 30, 60] {
+      &.gap-#{$gap} {
+        margin-left: -#{calc($gap / 2)}px;
+        margin-right: -#{calc($gap / 2)}px;
+
+        [class*="col-"] {
+          padding-left: #{calc($gap / 2)}px;
+          padding-right: #{calc($gap / 2)}px;
+        }
+      }
+    }
+  }
+}
+

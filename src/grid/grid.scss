@@ -1,6 +1,5 @@
-
-
 @include make-grid-rows();
+@include make-col-gap();
 @include make-grid-columns();
 @include make-grid-fillers();
 @include make-no-gutters();
